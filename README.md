@@ -38,6 +38,9 @@ If you are interested, please follow these steps:
 ## Contribution status
 [Here](https://github.com/meom-group/swot-ocean-model-intercomparison-project/blob/main/status_contribution.md) you will find information about the status of your contribution.
 
+## Analysis code
+The code used to perform the analysis is available [here](https://github.com/IGE-OPERA/swot-ocean-model-intercomparison-project/tree/main/Analysis).
+
 ## Contact
 Questions, comments, or suggestions should be submitted by opening a [new issue](https://github.com/meom-group/swot-ocean-model-intercomparison-project/issues).
 
