@@ -1,6 +1,6 @@
 Submission instruction
 -----------------
-The steps for submitting the required metadata are described below. An example of a metadata file is available [here](https://github.com/meom-group/swot-ocean-model-intercomparison-project/tree/main/Dataset_example_eORCA)
+The steps for submitting the required metadata are described below. An example of a metadata file is available [here](./Dataset_template/metadata_example_eORCA.yaml)
 
 1. Create a new fork.
 <img align="center" src="./img/metadata/1.png" width="900">

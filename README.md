@@ -54,7 +54,7 @@ Ocean model output  →  Synthocean interpolation  →  Pseudo-SWOT dataset  →
 | [`ocean-model-requirements.md`](./ocean-model-requirements.md) | Minimum requirements for simulations |
 | [`processing-instructions.md`](./processing-instructions.md) | How to interpolate model data onto the SWOT grid |
 | [`submission-instructions.md`](./submission-instructions.md) | How to submit your dataset and metadata |
-| [`Dataset_template/`](./Dataset_template/) | Metadata YAML template for new contributions |
+| [`Dataset_template/`](./Dataset_template/) | Metadata YAML template and filled example for new contributions |
 | [`Analysis/`](./Analysis/) | Notebooks and scripts for computing wavenumber spectra and diagnostics |
 | [`status_contribution.md`](./status_contribution.md) | Current status of all contributions |
 
