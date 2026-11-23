@@ -3,11 +3,12 @@
 ##### - Authoritative source: GEOMAR THREDDS data server, handle
 #####   https://data.geomar.de/downloads/20.500.12085/38e54d60-8cc9-11f0-90f0-005056a30ade
 ##### - Files keep the original contributor naming (SWOT_GRID_L3_LR_SSH_*_eINALT100.nc);
-#####   the deviation from the protocol naming convention is tracked in
-#####   https://github.com/meom-group/swot-ocean-model-intercomparison-project/issues/24
+#####   the deviation from the protocol naming convention is tracked in #24
 ##### - PRIVATE dataset: anonymous access is denied on this S3 endpoint. Read access
 #####   requires the read-only access key distributed by the SWOT-OMIP organizers.
-##### - Fields marked "X" (model configuration details) remain to be completed by the data provider.
+##### - Model configuration fields were provided by contreras-m (Dataset_GEOMAR.yaml,
+#####   PR #43 review comment, 2026-11-23). The remaining "X" (vertical momentum
+#####   advection scheme) is still to be confirmed by the data provider.
 eINALT100: # MODEL NAMES
       ##  Information on the provider institution
       data_provider:
@@ -15,54 +16,54 @@ eINALT100: # MODEL NAMES
         contact_email: "reschubert@geomar.de"
       ## Information about the model simulation 
       model_information:
-        simulation_name: "eINALT100-KFS002"
-        simulation_codebase: "X" # NEMO, MITgcm, MOM, CROCO...
-        codebase_version: "X" # x.x
+        simulation_name: "eINALT100.Z120-KFS002"
+        simulation_codebase: "NEMO" # NEMO, MITgcm, MOM, CROCO...
+        codebase_version: "5.0" # x.x
       ## Information about the model dataset 
       model_dataset:
-        output_frequency: "X" #  in h
-        type_of_average : "X" #  ‘None’ or averaging frequency in h
+        output_frequency: "1" #  in h
+        type_of_average : "1" #  ‘None’ or averaging frequency in h
         model_year: "2023" # Remember, just one year for metadata and dataset. If you wish to contribute more than one year, please complete this file for each year.
         base_s3_folder: "s3://ige/private/swot-omip/eINALT100/2023" # Access S3 point
         endpoint_url: "https://s3-ige-ping.osug.fr"
       ## Model grid 
       model_grid:
-        global: "X" # Boolean: True or False
-        grid_points: "X" ## string “Nx x Ny”
-        minimum_horizontal_gridsize: "X" ## in km
-        maximum_horizontal_gridsize: "X" ## in km
-        number_of_vertical_levels: "X"
-        minimum_vertical_gridsize: "X" ## in m
-        maximum_vertical_gridsize: "X" ## in m           
-        arakawa_grid_type: "X" # if relevant
-        vertical_coordinate: "X" ## “sigma” or “pressure” or “isopycnal” or “hybrid”
-        bathymetry : "X" ## Reference of the dataset used for defining model bathymetry
-        nested_model : "X"  # Boolean## Detail on the model experiment
+        global: "False" # Boolean: True or False
+        grid_points: "4058 x 3258" ## string “Nx x Ny”
+        minimum_horizontal_gridsize: "0.713" ## in km
+        maximum_horizontal_gridsize: "1.011" ## in km
+        number_of_vertical_levels: "120"
+        minimum_vertical_gridsize: "1" ## in m
+        maximum_vertical_gridsize: "100" ## in m           
+        arakawa_grid_type: "C" # if relevant
+        vertical_coordinate: "z-star" ## “sigma” or “pressure” or “isopycnal” or “hybrid”
+        bathymetry : "GEBCO2023" ## Reference of the dataset used for defining model bathymetry
+        nested_model : "True"  # Boolean## Detail on the model experiment
       ## Detail on the model experiment    
       model_experiment:
-        initial_condition: "X" # Database used for initialization  
-        date_initialization: "X" # in order to know how far we are from spin-up
-        atmospheric_forcing_dataset : "X" # ”None” or reference of the forcing dataset
-        atmospheric_forcing_frequency : "X" # Frequency of forcing dataset
-        atmospheric_model : "X" # None or name of the atm. model codebase
-        atmopheric_pressure_forcing: "X" # Boolean
-        wave_model : "X" # None or name fo the wave model codebase
-        sea_ice_model : "X" # None or name of the sea ice model codebase        
-        lateral_boundary_condition : "X" # None or reference of the forcing dataset
-        lateral_boundary_condition_frequency : "X" # None or frequency of forcing dataset
-        river_runoff_dataset:  "X" # None or reference to the database
-        tidal_constituents: "X" # “None” or list of constituents        
+        initial_condition: "a 1/20 degree run that started from WOA at rest in 2000" # Database used for initialization  
+        date_initialization: "2018" # in order to know how far we are from spin-up
+        atmospheric_forcing_dataset : "JRA55-do" # ”None” or reference of the forcing dataset
+        atmospheric_forcing_frequency : "3h" # Frequency of forcing dataset
+        atmospheric_model : "None" # None or name of the atm. model codebase
+        atmopheric_pressure_forcing: "False" # Boolean
+        wave_model : "None" # None or name fo the wave model codebase
+        sea_ice_model : "SI3" # None or name of the sea ice model codebase        
+        lateral_boundary_condition : "None" # None or reference of the forcing dataset
+        lateral_boundary_condition_frequency : "None" # None or frequency of forcing dataset
+        river_runoff_dataset:  "JRA55-do" # None or reference to the database
+        tidal_constituents: "None" # “None” or list of constituents        
       ## Detail on model schemes and parameters   
       model_parameters:
-        bulk_formulae: "X"  # reference to the version of the bulk formulae
-        wind_stress_formulation: "X"  #
-        horizontal_momentum_advection_scheme: "X"
-        horizontal_tracer_advection_scheme: "X"
+        bulk_formulae: "Large and Yeager 2009"  # reference to the version of the bulk formulae
+        wind_stress_formulation: "current feedback Renault et al. 2020"  #
+        horizontal_momentum_advection_scheme: "UP3"
+        horizontal_tracer_advection_scheme: "UBS"
         vertical_momentum_advection_scheme: "X"
-        vertical_tracer_advection_scheme: "X"
-        horizontal_momentum_dissipation: "X" # background value, the unit informs on the type of dissipation
-        horizontal_tracer_dissipation: "X" # background value, the unit informs on the type of dissipation
-        vertical_mixing_parameterization: "X"
-        equation_state: "X"
-        bottom_drag: "X"
-        bottom_drag_coeff: "X"
+        vertical_tracer_advection_scheme: "2nd order FCT"
+        horizontal_momentum_dissipation: "None" # background value, the unit informs on the type of dissipation
+        horizontal_tracer_dissipation: "None" # background value, the unit informs on the type of dissipation
+        vertical_mixing_parameterization: "TKE"
+        equation_state: "EOS80"
+        bottom_drag: "non linear"
+        bottom_drag_coeff: "1.e-3"

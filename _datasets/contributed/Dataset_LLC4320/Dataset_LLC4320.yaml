@@ -7,7 +7,9 @@ LLC4320: # MODEL NAMES
       ##  Information on the provider institution
       data_provider:
         institution_name: "Moss Landing Marine Laboratories, San José State University"
-        contact_email: "dimitris.menemenlis@sjsu.edu" 
+        contact_email: "dimitris.menemenlis@sjsu.edu"
+        ##### NOTE (2026-11-23): the pseudo-SWOT dataset contributed to SWOT-OMIP was
+        ##### prepared by @siyidongfang and Scott Conn (MIT).
       ## Information about the model simulation 
       model_information:
         simulation_name: "LLC4320 Global Ocean Simulation"
