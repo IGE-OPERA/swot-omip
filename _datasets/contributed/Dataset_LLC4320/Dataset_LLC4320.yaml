@@ -7,7 +7,9 @@ LLC4320: # MODEL NAMES
       ##  Information on the provider institution
       data_provider:
         institution_name: "Moss Landing Marine Laboratories, San José State University"
-        contact_email: "dimitris.menemenlis@sjsu.edu" 
+        contact_email: "dimitris.menemenlis@sjsu.edu"
+        ##### NOTE (2026-11-23): the pseudo-SWOT dataset contributed to SWOT-OMIP was
+        ##### prepared by @siyidongfang and Scott Conn (MIT).
       ## Information about the model simulation 
       model_information:
         simulation_name: "LLC4320 Global Ocean Simulation"
@@ -23,6 +25,10 @@ LLC4320: # MODEL NAMES
         model_year: "2011-09-13 to 2012-09-12" # Remember, just one year for metadata and dataset. If you wish to contribute more than one year, please complete this file for each year.
         base_s3_folder: "s3://project-meom-ige/LLC4320" # Access S3 point
         endpoint_url: "https://minio.lab.dive.edito.eu"
+        ##### NOTE (2026-11-22, IGE): a partial PUBLIC mirror of this dataset (cycles 008-016) is
+        ##### hosted by IGE at s3://ige/public/swot-omip/LLC4320
+        ##### (endpoint https://s3-ige-ping.osug.fr, anonymous access), for reproducibility of
+        ##### the SWOT-OMIP seasonality analysis. The complete dataset is the one above.
       ## Model grid 
       model_grid:
         global: "True" # Boolean: True or False
@@ -68,14 +74,4 @@ LLC4320: # MODEL NAMES
         equation_state: "JMD95Z, a modified UNESCO formula by Jackett and McDougall (1995), which uses the model variable potential temperature as input. The ’Z’ indicates that this equation of state uses a horizontally and temporally constant pressure p_0 = -g*rho_0*z." 
         bottom_drag: "Quadratic drag"
         bottom_drag_coeff: "2.1e-3"
-Footer
-© 2025 GitHub, Inc.
-Footer navigation
-
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-    Contact
 
